@@ -1,0 +1,66 @@
+
+   /* Effet Titre INSCRIPTION */
+   .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.button {
+  --border-right: 6px;
+  --text-stroke-color: #b74f38;
+  --animation-color: #fcfbfb;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+h1{
+    justify-content : center;
+    display : flex;
+    align-content: center;
+}
+
+/* ---------------------------------------------------- */
+
+#form-container {
+    background: #F7EDC1;
+    background: -moz-linear-gradient(45deg, #F7EDC1 0%, #FFD112 40%, #7A7000 100%);
+    background: -webkit-linear-gradient(45deg, #F7EDC1 0%, #FFD112 40%, #7A7000 100%);
+    background: linear-gradient(45deg, #F7EDC1 0%, #FFD112 40%, #7A7000 100%);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+}
+
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+}
