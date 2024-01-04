@@ -50,9 +50,9 @@ h1{
 }
 
 /* ---------------------------------------------------- */
-
+ 
 #form-container {
-    background: #F7EDC1;
+    background: #2b2506;
     background: -moz-linear-gradient(45deg, #F7EDC1 0%, #FFD112 40%, #7A7000 100%);
     background: -webkit-linear-gradient(45deg, #F7EDC1 0%, #FFD112 40%, #7A7000 100%);
     background: linear-gradient(45deg, #F7EDC1 0%, #FFD112 40%, #7A7000 100%);
@@ -63,4 +63,4 @@ box-shadow: 5px 5px 15px 5px #000000;
 label{
     font-family: Arial, Helvetica, sans-serif;
     color: #000000;
-}
+} 
