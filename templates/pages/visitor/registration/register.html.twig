@@ -1,14 +1,47 @@
-{% extends "themes/base_visitor.html.twig" %}
-{% block title %}Page Inscription{% endblock %}
-{% block description %}Crée votre compte dans notre famille de sportifs. {% endblock %}
-{% block keywords %} musculation, fitness, entraînement, exercices, santé, bien-être, performance sportive, nutrition, bodybuilding, sport, exercices physiques, entraînement musculaire, programme d'entraînement, équipement de fitness, conseils sportifs, développement musculaire, athlétisme, force physique, endurance, mode de vie actif, corps sain, motivation sportive , page inscription{% endblock %}
-{# StyleSheet #}
-{% block stylesheet %}/css/registration/app.css{% endblock %}
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    {# Encodage des carecteres pour le web  #}
+    <meta charset="UTF-8">
+
+    {# Minimun de responsive #}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# titre de la page (que va varier pour chaque page) #}
+    <title>Page Inscription</title>
+
+                                        {# SEO #}
+    <meta name="description" content="Crée votre compte dans notre famille de sportifs. ">
+
+    {# Les keywords selon google ne sont plus indispensables pour le SEO selon GOOGLE #}
+    <meta name="keywords" content=" musculation, fitness, entraînement, exercices, santé, bien-être, performance sportive, nutrition, bodybuilding, sport, exercices physiques, entraînement musculaire, programme d'entraînement, équipement de fitness, conseils sportifs, développement musculaire, athlétisme, force physique, endurance, mode de vie actif, corps sain, motivation sportive , page inscription">
+
+    <meta name="robots" content="index,follow">
+
+      {# # Font Awesome # #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+                             {# Favicon #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#ffffff">
 
 
-{% block main %}
+{# Mon bootstrap CSS #}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <body class="h-100">
+{# Stylesheet CSS #}
+<link rel="stylesheet" href="/css/registration/app.css">
+
+</head>
+  
+  
+   <body class="h-100">
 
         <div class="container text-white mt-5" id='form-container'>
             <div class="row">
@@ -107,6 +140,4 @@
 </div>
 
 
-                {% endblock %} 
-
-
+</body>
