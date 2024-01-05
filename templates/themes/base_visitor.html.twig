@@ -45,7 +45,9 @@
 {# NavBar #}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{path('visitor.welcome.index')}}">Logo</a>
+    <a class="navbar-brand d-flex align-items-center" href="{{path('visitor.welcome.index')}}">
+          <img src="{{ asset('assets/images/visitor/logos/logo_blog_2.png') }}" class="mr-2 rounded-circle img-fluid" alt="Logo" style="max-width: 65px;" ></img>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -72,33 +74,32 @@
 
               {% if is_granted('ROLE_ADMIN') %}
 
-                   <li class="nav-item">
-                        <a class="nav-link" href="{{path('admin.home.index')}}" >Espace admin <i class="fa-solid fa-user-tie"></i> </a> 
-                   </li>
-
-              {% elseif is_granted('ROLE_USER') %}
-
-                   <li class="nav-item">
-                      <a class="nav-link" href= >Mon espace <i class="fa-solid fa-user"></i> </a> 
-                    </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{path('admin.home.index')}}" >Espace admin <i class="fa-solid fa-user-tie"></i> </a> 
+              </li>
 
               {% endif %}
 
-                <li class="nav-item">
-              <a class="nav-link" href= >Mon espace <i class="fa-solid fa-user"></i> </a> 
-                </li>
+              {% if is_granted('ROLE_USER') %}
+
               <li class="nav-item">
-              <a class="nav-link text-danger" href='{{path('app.logout')}}' > <i class="fa-solid fa-arrow-right-from-bracket"></i>  </a>
+                  <a class="nav-link" href= >Mon espace <i class="fa-solid fa-user"></i> </a> 
               </li>
 
-         {% else %}
+              {% endif %}
+              
+              <li class="nav-item">
+                  <a class="nav-link text-danger" href='{{path('app.logout')}}' > <i class="fa-solid fa-arrow-right-from-bracket"></i>  </a>
+              </li>
+
+              {% else %}
           
-                <li class="nav-item">
-           <a class="nav-link" href='{{path('visitor.authentication.login')}}'>Connexion</a> 
-            </li>
-          <li class="nav-item">
-           <a class="nav-link" href='{{path('visitor.registration.register')}}'>Incrivez-vous</a>
-          </li>
+              <li class="nav-item">
+                  <a class="nav-link" href='{{path('visitor.authentication.login')}}'>Connexion</a> 
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href='{{path('visitor.registration.register')}}'>Incrivez-vous</a>
+              </li>
 
         {% endif %}
           
