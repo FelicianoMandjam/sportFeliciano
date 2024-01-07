@@ -53,7 +53,7 @@
     {# Beautiful replacement for select boxes #}
     {% block select2 %}{% endblock %}
         
-    <style>
+        <style>
     
         .bi {
         display: inline-block;
@@ -101,11 +101,12 @@
         padding: .75rem 1rem;
         }
     </style>
+
     
   </head>
   <body>
 
-    <header class="navbar sticky-top bg-secondary flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
     <a class="navbar-brand d-flex align-items-center" href="{{path('visitor.welcome.index')}}">
           <img src="{{ asset('assets/images/visitor/logos/logo_blog_2.png') }}" class="bg-secondary mr-2 rounded-circle img-fluid" alt="Logo" style="max-width: 65px;" ></img>
     </a>
@@ -141,7 +142,7 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link d-flex align-items-center gap-2" href=>
+                              <a class="nav-link d-flex align-items-center gap-2" href="{{path('admin.post.index')}}">
                                   <i class="fa-solid fa-feather-pointed"></i>
                                   Articles
                               </a>
