@@ -25,22 +25,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
     
 
-    #[Assert\NotBlank(message:"Le prénom est obligatoire.")]
+    #[Assert\NotBlank(message: "Le prénom est obligatoire.")]
     #[Assert\Length(
         max: 255,
-        maxMessage: 'VOtre prénom doit contenir au  maximun {{ limit }} caractéres',
+        maxMessage: "Le prénom ne doit pas dépasser {{ limit }} caractères.",
     )]
     #[Assert\Regex(
         pattern: "/^[0-9a-zA-Z-_' áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/i",
         match: true,
-        message: 'Veuillez entrer un prénom valide.',
+        message: 'Le prénom doit contenir uniquement des lettres, des chiffres le tiret du milieu, l\'undescore.',
     )]
     #[ORM\Column(length: 255)]
     private ?string $firstName = null;
-    
 
     
-    #[Assert\NotBlank(message:"Le nom est obligatoire.")]
+
+    #[Assert\NotBlank(message: "Le nom est obligatoire.")]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: "Le nom ne doit pas dépasser {{ limit }} caractères.",
+    )]
+    #[Assert\Regex(
+        pattern: "/^[0-9a-zA-Z-_' áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]+$/i",
+        match: true,
+        message: 'Le nom doit contenir uniquement des lettres, des chiffres le tiret du milieu, l\'undescore.',
+    )]
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
     
