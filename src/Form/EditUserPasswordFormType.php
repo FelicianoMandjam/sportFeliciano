@@ -2,27 +2,33 @@
 
 namespace App\Form;
 
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
+use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
 
-class ChangePasswordFormType extends AbstractType
+class EditUserPasswordFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('plainPassword', RepeatedType::class, [
+         // CurrentPassword ne fait pas partie de l'intity User donc ajouter parametre "mapped"
+            ->add('currentPassword', PasswordType::class, [
+                "mapped" => false,
+                "constraints" => [
+                    new UserPassword(['message' => "Le mot de passe actuelle est incorrect."])
+                ]
+            ])
+            ->add('password' , RepeatedType::class,[
+
                 'type' => PasswordType::class,
-                'options' => [
-                    'attr' => [
-                        'autocomplete' => 'new-password',
-                    ],
-                ],
                 'first_options' => [
                     'constraints' => [
                         new NotBlank([
@@ -41,21 +47,18 @@ class ChangePasswordFormType extends AbstractType
                             "message" => "Le mot de passe doit contentir au moins une lettre miniscule, une majuscule, un chiffre et un caractère spécial.",
                         ])
                     ],
-                    'label' => 'Nouveau mot de passe.',
+
                 ],
-                'second_options' => [
-                    'label' => 'Saisissez le mot de passe à nouveau',
-                ],
+
                 'invalid_message' => 'Le mot de passe doit être identique à sa confirmation.',
-                // Instead of being set onto the object directly,
-                // this is read and encoded in the controller
-                'mapped' => false,
             ])
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            // 'data_class' => User::class,
+        ]);
     }
 }
