@@ -84,7 +84,7 @@
               {% if is_granted('ROLE_USER') %}
 
               <li class="nav-item">
-                  <a class="nav-link my-2 mx-sm-2 btn btn-outline-danger shadow " href= >Mon espace <i class="fa-solid fa-user"></i> </a> 
+                  <a class="nav-link my-2 mx-sm-2 btn btn-outline-danger shadow " href="{{path('user.home.index')}}" > Mon espace <i class="fa-solid fa-user"></i> </a> 
               </li>
 
               {% endif %}
