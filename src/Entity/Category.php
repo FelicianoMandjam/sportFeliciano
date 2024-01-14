@@ -109,8 +109,27 @@ class Category
      */
     public function getPosts(): Collection
     {
+        
         return $this->posts;
     }
+    /**
+     * @return array, Post>
+     */
+    public function getPublishedPostsArray(): array
+    {
+        $publishedPost = [];
+
+        foreach ($this->posts as $post) {
+            if ($post->isIsPublished()) {
+                $publishedPost[] = $post;
+            }
+        }
+        return $publishedPost;
+    }
+
+  
+
+
 
     public function addPost(Post $post): static
     {

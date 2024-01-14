@@ -2,11 +2,20 @@
 {% block title %}Page Contact{% endblock %}
 {% block description %}Rentrez en contact avec nous pour n'importe quel type d'informations, conseils ou propositions sportifs.{% endblock %}
 {% block keywords %} musculation, fitness, entraînement, exercices, santé, bien-être, performance sportive, nutrition, bodybuilding, sport, exercices physiques, entraînement musculaire, programme d'entraînement, équipement de fitness, conseils sportifs, développement musculaire, athlétisme, force physique, endurance, mode de vie actif, corps sain, motivation sportive , page contact{% endblock %}
-
+{% block stylesheet %}/css/app.css{% endblock %}
 
 {% block main %}
     <main>
-        {% include 'components/header_visitor.html.twig' with {'title':'Page de contact'} %}
+    <div class="patterns">
+        <div class:"titre"> 
+                <h1>
+                    <button data-text="Awesome" class="button">
+                            <span class="actual-text">&nbsp;Contact&nbsp;</span>
+                            <span class="hover-text" aria-hidden="true">&nbsp;Contact&nbsp;</span>
+                    </button>
+                </h1>
+        </div>
+  </div>
 
         <div class="container my-5">
             <div class="row">
@@ -53,7 +62,7 @@
                             {{form_widget(form.message, {'attr': {'class':'form-control'}})}}
                         </div>
                         <div class="mb-3">
-                            <input formnovalidate type="submit" class="btn btn-primary">
+                            <input formnovalidate type="submit" class="btn btn-danger">
                         </div>
                     {{form_end(form)}}
                 </div>
@@ -63,7 +72,7 @@
                         <p><strong><i class="fa-solid fa-phone"></i> Phone </strong>: {{setting.phone}}</p>
                     {% endif %}
                     <div>
-                        <h1>Localisation <i class="fa-solid fa-location-dot"></i></h1>
+                        <h1 class="text-danger">Localisation <i class="fa-solid fa-location-dot"></i></h1>
                        <iframe class="h-100 w-100"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42079.430934605465!2d2.3789819828183267!3d48.7634755075292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6749099be334b%3A0x40b82c3688b3960!2sChoisy-le-Roi!5e0!3m2!1sen!2sfr!4v1704860322632!5m2!1sen!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     
