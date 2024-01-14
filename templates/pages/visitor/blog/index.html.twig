@@ -2,7 +2,16 @@
 {% block title %}Page Blog{% endblock %}
 {% block description %}Explorez l'univers passionnant de la musculation et des sports sur notre blog dédié, où la puissance, la performance et la santé se rencontrent. Plongez dans des conseils d'experts, des programmes d'entraînement personnalisés et des analyses approfondies des dernières tendances dans le monde du fitness. Que vous soyez un débutant cherchant à sculpter votre corps ou un athlète chevronné visant l'excellence, notre contenu informatif et inspirant vous guidera à chaque étape de votre parcours. Découvrez des articles détaillés sur la nutrition sportive, des revues approfondies sur les équipements de pointe, et des astuces pratiques pour maximiser vos performances. Rejoignez notre communauté passionnée de passionnés de fitness et transformez votre corps tout en atteignant de nouveaux sommets athlétiques. Atteignez vos objectifs, repoussez vos limites et vivez une vie active avec notre blog dédié à la musculation et aux sports. Bienvenue dans le monde où la force et la détermination se rencontrent pour créer une version améliorée de vous-même chaque jour.{% endblock %}
 {% block keywords %} musculation, fitness, entraînement, exercices, santé, bien-être, performance sportive, nutrition, bodybuilding, sport, exercices physiques, entraînement musculaire, programme d'entraînement, équipement de fitness, conseils sportifs, développement musculaire, athlétisme, force physique, endurance, mode de vie actif, corps sain, motivation sportive , page blog{% endblock %}
+{% block stylesheet %}/css/app.css{% endblock %}
 
 {% block main %}
-{% include "components/header_visitor.html.twig" with {'title':'Page de Blog'} %}
+        <div class:"titre"> 
+                <h1>
+                    <button data-text="Awesome" class="button">
+                            <span class="actual-text">&nbsp;Blog&nbsp;</span>
+                            <span class="hover-text" aria-hidden="true">&nbsp;Blog&nbsp;</span>
+                    </button>
+                </h1>
+        </div>
+  
 {% endblock %}
