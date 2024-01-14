@@ -95,7 +95,7 @@
                                 <div class="card-body">
                                     <h3 class="card-title">{{post.title}}</h3>
                                     <p class="card-text">{{post.content|striptags|u.truncate(70, '...')|raw}}</p>
-                                    {# <p><a href="{{path('visitor.blog.post.show', {'id': post.id, 'slug': post.slug})}}" class="btn btn-sm btn-primary">Lire cet article</a></p> #}
+                                    <p><a href="{{path('visitor.blog.post.show', {'id': post.id, 'slug': post.slug})}}" class="btn btn-sm btn-primary">Lire cet article</a></p>
                                     <p class="card-text"><small class="text-body-secondary">Publié {{post.publishedAt|ago}}</small></p>
                                 </div>
                             </div>

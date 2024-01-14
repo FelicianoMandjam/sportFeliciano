@@ -117,6 +117,19 @@ class Tag
         return $this->posts;
     }
 
+    public function getPublishedPostsArray(): array
+    {
+        $publishedPost = [];
+
+        foreach ($this->posts as $post) {
+            if ($post->isIsPublished()) {
+                $publishedPost[] = $post;
+            }
+        }
+        return $publishedPost;
+    }
+
+
     public function addPost(Post $post): static
     {
         if (!$this->posts->contains($post)) {
