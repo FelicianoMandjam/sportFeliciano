@@ -2,8 +2,117 @@
 {% block title %}Page d'accueil{% endblock %}
 {% block description %}Explorez l'univers passionnant de la musculation et des sports sur notre blog dédié, où la puissance, la performance et la santé se rencontrent. Plongez dans des conseils d'experts, des programmes d'entraînement personnalisés et des analyses approfondies des dernières tendances dans le monde du fitness. Que vous soyez un débutant cherchant à sculpter votre corps ou un athlète chevronné visant l'excellence, notre contenu informatif et inspirant vous guidera à chaque étape de votre parcours. Découvrez des articles détaillés sur la nutrition sportive, des revues approfondies sur les équipements de pointe, et des astuces pratiques pour maximiser vos performances. Rejoignez notre communauté passionnée de passionnés de fitness et transformez votre corps tout en atteignant de nouveaux sommets athlétiques. Atteignez vos objectifs, repoussez vos limites et vivez une vie active avec notre blog dédié à la musculation et aux sports. Bienvenue dans le monde où la force et la détermination se rencontrent pour créer une version améliorée de vous-même chaque jour.{% endblock %}
 {% block keywords %} musculation, fitness, entraînement, exercices, santé, bien-être, performance sportive, nutrition, bodybuilding, sport, exercices physiques, entraînement musculaire, programme d'entraînement, équipement de fitness, conseils sportifs, développement musculaire, athlétisme, force physique, endurance, mode de vie actif, corps sain, motivation sportive {% endblock %}
-
+{% block stylesheet %}/css/app.css{% endblock %}
 
 {% block main %}
-<h1 class="text-center my-3 display-5">Page d'accueil</h1>
+
+        <main>
+    {# Hero Section #}
+            <header>
+              <div class:"titre"> 
+                <h1>
+                    <button data-text="Awesome" class="button">
+                            <span class="actual-text">&nbsp;BLOGSPORT&nbsp;</span>
+                            <span class="hover-text" aria-hidden="true">&nbsp;BLOGSPORT&nbsp;</span>
+                    </button>
+                </h1>
+        </div>
+            <div class="container">
+                <div class="row">
+                    <div class = "col-md-5 my-3 order-md-2">
+                        <img id="pageAcceuil" src='assets/images/visitor/accueil/Page_acceuil.jpg' class="img-fluid rounded"  alt="image d'accueil du blog">
+                    </div>
+                    <div class=" d-flex flex-column justify-content-evenly align-items-center col-md-7 my-3 order-md-1">
+                        <div class="text-center">
+                            <h1 class="d-flex flex-column justify-content-evenly align-items-center"> Bienvenue au <span id="Title_BLOGSPORT" class="text-danger"> <strong>BLOGSPORT</strong></span> de Feliciano<h1>
+                        </div>
+                        <div class="text-center">
+                            <small>l'espace dédié aux passionnés de sport</small>
+                            <p> Explorez l'univers de la performance, de la motivation et des conseils pour atteindre vos objectifs sportifs. <p>
+                        </div>
+                        <div class="text-center">
+                            <a href="" class="btn btn-danger btn-lg shadow"> Articles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </header>
+
+
+            {# Hero Section #}
+            <section id="about-me" class="bg-dark text-white py-3">
+            <h2 class="text-center my-3 display-5 text-danger">Qui suis-je?</h2>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                       <iframe  width="486" height="864" src="https://www.youtube.com/embed/milb52DUprU" title="DeadLift #sports #deadlift #fitness #motivation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-6 mt-3 d-flex flex-column justify-content-center align-items-center">
+                        <p>
+                           Bienvenue sur BLOGSPORT Feliciano ! Je suis Feliciano Mandjam, un passionné de 24 ans mêlant la puissance de la musculation et l'élégance du football. En dehors du monde du sport, je plonge dans l'univers captivant de la vidéo et de l'audiovisuel. En parallèle, je suis actuellement un Développeur Web Junior, fusionnant ma passion pour la technologie avec mon amour du mouvement. Rejoignez-moi pour découvrir l'intersection unique entre le physique, la technologie et l'expression artistique.
+                        </p>
+                        <p>
+                           Prêt à transformer votre passion en action? Rejoignez la communauté de BLOGSPORT Feliciano dès maintenant pour vivre l'excitation du sport, de la technologie et de la créativité! Inscrivez-vous pour ne rien manquer des conseils, des histoires inspirantes et des aventures qui vous attendent. En route vers de nouvelles perspectives passionnantes!                      </p>
+                        <p>
+                            Un immense merci pour votre attention et votre soutien ! Ensemble, plongeons dans l'énergie vibrante de BLOGSPORT Feliciano. Restez connectés, restez inspirés, et vivez pleinement votre passion. À bientôt sur le blog !
+                        </p>
+                    </div>
+                <div class="social_title">
+                    <h1> Mes Réseaux : </h1>
+                </div>
+                <div class="social mt-5">
+                    <ul class="d-flex justify-content-end gap-5">
+                        <a class="btn text-white w-25 h-25" data-mdb-ripple-init style="background-color: #ac2bac;" href="https://www.instagram.com/feliciano100jui/" role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="btn text-white w-25 h-25" data-mdb-ripple-init style="background-color: #0082ca;" href="https://www.linkedin.com/in/feliciano-mandjam-26226625a/" role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="btn text-white w-25 h-25" data-mdb-ripple-init style="background-color: #ed302f;" href="https://www.youtube.com/channel/UCp1KxMMQ9xTJP3NRwkfvUQA" role="button">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a class="btn text-white w-25 h-25" data-mdb-ripple-init style="background-color: #333333;" href="https://github.com/FelicianoMandjam" role="button">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    <ul>
+                </div>
+                </div>
+            </div>
+        </section>
+
+
+        {# 3 last posts #}
+
+        {% if posts|length != 0 %}
+        <section id="last-posts" class="my-3 py-3">
+                <h2 data-aos="fade-down" class="text-center my-3 display-5">Les 3 derniers articles</h2>
+
+                <div class="container mt-5">
+                    <div class="card-group">
+                        {% for post in posts %}
+                            <div class="card mx-3 border shadow">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{post.title}}</h3>
+                                    <p class="card-text">{{post.content|striptags|u.truncate(70, '...')|raw}}</p>
+                                    {# <p><a href="{{path('visitor.blog.post.show', {'id': post.id, 'slug': post.slug})}}" class="btn btn-sm btn-primary">Lire cet article</a></p> #}
+                                    <p class="card-text"><small class="text-body-secondary">Publié {{post.publishedAt|ago}}</small></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+             <section class="my-3 py-5 bg-light text-center">
+            <a 
+                href="{{path('visitor.contact.index')}}" 
+                class="btn btn-lg btn-danger"
+            >
+                    Contactez-moi
+            </a>
+        </section>
+        {% endif %}
+        </main>
+
 {% endblock %}
