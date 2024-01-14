@@ -31,26 +31,27 @@
 
             <div class="text-center">
                 <h1 class="my-3 display-5">{{post.title}}</h1>
-                <small>Publié {{post.publishedAt|ago}} par Jean Dupont</small>
+                <small>Publié {{post.publishedAt|ago}} par Feliciano Mandjam</small>
             </div>
 
-            <article class="container-jd my-5">
+            <article class="container-feli my-5">
                 {{post.content|raw}}
 
-                <a id="like-link" href="{{path('visitor.blog.post.like', {'id':post.id, 'slug':post.slug})}}">
+                {# <a id="like-link" href="{{path('visitor.blog.post.like', {'id':post.id, 'slug':post.slug})}}">
                     {% if app.user and post.isLikedBy(app.user) %}
                         <i class="fa-solid fa-thumbs-up"></i> {# Pouce liké #}
-                    {% else %}
+                    {# {% else %}
                         <i class="fa-regular fa-thumbs-up"></i> {# Pouce non liké #}
-                    {% endif %}
+                    {# {% endif %}
                     
                     <span id="total-likes-container">{{post.p ostLikes|length}}</span>
-                    <span>J'aime</span>
-                </a>
-            </article>
+                    <span>J'aime</span> #} 
+                {# </a> #}
+            </article> 
+
 
             {% if app.user %}
-                <div class="my-5 container-jd">
+                <div class="my-5 container-feli">
                     {{form_start(form, {'action': path('visitor.blog.post.show', {'id': post.id, 'slug':post.slug})~"#comment_form_content" })}}
                         <div class="mb-3">
                             <label for="comment_form_content">Laissez un commentaire</label>
@@ -58,7 +59,7 @@
                             {{form_widget(form.content, {'attr': {'class': 'form-control'}})}}
                         </div>
                         <div>
-                            <input formnovalidate type="submit" class="btn btn-primary" value="Commenter">
+                            <input formnovalidate type="submit" class="btn btn-danger" value="Commenter">
                         </div>
                     {{form_end(form)}}
                 </div>
@@ -91,33 +92,33 @@
 {% block javascript %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        $(document).ready(function(){
-            $('#like-link').on('click', function(event){
-                event.preventDefault();
+        // $(document).ready(function(){
+        //     $('#like-link').on('click', function(event){
+        //         event.preventDefault();
 
-                $.ajax({
-                    url: this.href,
-                    type: 'GET',
-                    success: function(response){
-                        $('#total-likes-container').html(response.totalLikes);
+        //         $.ajax({
+        //             url: this.href,
+        //             type: 'GET',
+        //             success: function(response){
+        //                 $('#total-likes-container').html(response.totalLikes);
 
-                        if ($('i').hasClass('fa-regular')) {
-                            $('i').removeClass('fa-regular');
-                            $('i').addClass('fa-solid');
-                        } else {
-                            $('i').removeClass('fa-solid');
-                            $('i').addClass('fa-regular');
-                        }
-                    },
-                    error: function(response){
-                        if (response.status == 403) {
-                            alert(response.responseJSON.message);
-                        } else {
-                            alert("Une erreur est survenue. Veuillez réessayer plus tard.");
-                        }
-                    }
-                });
-            });
-        });
+        //                 if ($('i').hasClass('fa-regular')) {
+        //                     $('i').removeClass('fa-regular');
+        //                     $('i').addClass('fa-solid');
+        //                 } else {
+        //                     $('i').removeClass('fa-solid');
+        //                     $('i').addClass('fa-regular');
+        //                 }
+        //             },
+        //             error: function(response){
+        //                 if (response.status == 403) {
+        //                     alert(response.responseJSON.message);
+        //                 } else {
+        //                     alert("Une erreur est survenue. Veuillez réessayer plus tard.");
+        //                 }
+        //             }
+        //         });
+        //     });
+        // });
     </script>
 {% endblock %}
